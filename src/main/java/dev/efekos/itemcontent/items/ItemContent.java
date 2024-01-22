@@ -16,7 +16,6 @@ import org.bukkit.entity.Axolotl;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.*;
-import org.bukkit.inventory.meta.trim.ArmorTrim;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -151,12 +150,6 @@ public class ItemContent extends Content {
         }
         if(meta instanceof MapMeta mapMeta){
             itemTag = new MapTag(itemTag,mapMeta.getMapView().getId());
-        }
-        if(meta instanceof ArmorMeta armorMeta){
-            if(armorMeta.hasTrim()){
-                ArmorTrim trim = armorMeta.getTrim();
-                itemTag = new TrimTag(itemTag,new TrimCompound(trim.getPattern(),trim.getMaterial()));
-            }
         }
         if(meta instanceof FireworkMeta fireworkMeta){
             List<ExplosionCompound> compounds = new ArrayList<>();
@@ -392,7 +385,6 @@ public class ItemContent extends Content {
                 case HIDE_PLACED_ON: hideFlagsBit += 16;
                 case HIDE_DESTROYS: hideFlagsBit += 8;
                 case HIDE_ATTRIBUTES: hideFlagsBit += 2;
-                case HIDE_ARMOR_TRIM: hideFlagsBit+=128;
                 case HIDE_POTION_EFFECTS:hideFlagsBit+=32;
             }
         }
