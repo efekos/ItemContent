@@ -1,5 +1,6 @@
 package dev.efekos.itemcontent.items.compound;
 
+import dev.efekos.itemcontent.items.ItemContent;
 import org.bukkit.NamespacedKey;
 
 /**
@@ -15,7 +16,7 @@ public class SuspiciousStewEffectCompound {
     }
 
     public NamespacedKey getEffectId() {
-        return NamespacedKey.fromString(EffectId);
+        return ItemContent.namespacedKeyFromString(EffectId);
     }
 
     public Integer getEffectDuration() {
