@@ -221,10 +221,6 @@ public class ItemContent extends Content {
                 itemTag = new AxolotlBucketTag(itemTag,calculateAxolotlVariant(bucketMeta.getVariant()));
             }
         }
-        if(meta instanceof MusicInstrumentMeta musicInstrumentMeta){
-            MusicInstrument instrument = musicInstrumentMeta.getInstrument();
-            itemTag = new GoatHornTag(itemTag,instrument.getKey().getKey());
-        }
         if(meta instanceof BundleMeta bundleMeta){
             if(bundleMeta.hasItems()){
                 List<ItemContent> contents = new ArrayList<>();
