@@ -211,9 +211,9 @@ public class ItemContent extends Content {
 
             if(compassMeta.hasLodestone()){
                 Location lodestone = compassMeta.getLodestone();
-                NamespacedKey worldKey = lodestone.getWorld().getKey();
+                String worldKey = lodestone.getWorld().getName();
 
-                itemTag = new CompassTag(itemTag,new CompassPositionCompound(lodestone.getBlockX(),lodestone.getBlockY(),lodestone.getBlockZ()), worldKey.getNamespace()+":"+worldKey.getKey(), compassMeta.isLodestoneTracked());
+                itemTag = new CompassTag(itemTag,new CompassPositionCompound(lodestone.getBlockX(),lodestone.getBlockY(),lodestone.getBlockZ()), worldKey, compassMeta.isLodestoneTracked());
             }
         }
         if(meta instanceof AxolotlBucketMeta bucketMeta){
