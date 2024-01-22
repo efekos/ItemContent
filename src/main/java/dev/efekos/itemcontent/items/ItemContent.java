@@ -144,7 +144,6 @@ public class ItemContent extends Content {
         ItemTag itemTag = new ItemTag(0, calculateHideFlags(meta.getItemFlags()), new Display(getName(meta), getLore(meta)), meta.isUnbreakable(), meta.hasCustomModelData() ? meta.getCustomModelData() : null, getEnchantsCompounds(meta.getEnchants()),0);
 
         if(meta instanceof EnchantmentStorageMeta enchantmentStorage){
-
             itemTag = new EnchantmentStorageTag(itemTag,getEnchantsCompounds(enchantmentStorage.getStoredEnchants()));
         }
         if(meta instanceof BookMeta bookMeta){
@@ -187,7 +186,7 @@ public class ItemContent extends Content {
                 compounds.add(new SuspiciousStewEffectCompound(calculatePotionEffect(effect.getType()),effect.getDuration()));
             }
 
-            itemTag = new SuspiciousStewTag(itemTag,compounds.toArray(new SuspiciousStewEffectCompound[0]));
+            itemTag = new SuspiciousStewTag(itemTag,compounds.toArray(SuspiciousStewEffectCompound[]::new));
         }
         if(meta instanceof Damageable dMeta){
             if(dMeta.hasDamage()) itemTag.Damage = dMeta.getDamage();
@@ -482,43 +481,8 @@ public class ItemContent extends Content {
      * @param type Any {@link PotionEffectType} you want.
      * @return Numeric ID of the effect type given.
      */
-    public static Integer calculatePotionEffect(PotionEffectType type){
-        return switch (type.getKey().getKey()) {
-            default -> 0;
-            case "speed" -> 1;
-            case "slowness" -> 2;
-            case "haste" -> 3;
-            case "mining_fatigue" -> 4;
-            case "strength" -> 5;
-            case "instant_health" -> 6;
-            case "instant_damage" -> 7;
-            case "jump_boost" -> 8;
-            case "nausea" -> 9;
-            case "regeneration" -> 10;
-            case "resistance" -> 11;
-            case "fire_resistance" -> 12;
-            case "water_breathing" -> 13;
-            case "invisibility" -> 14;
-            case "blindness" -> 15;
-            case "night_vision" -> 16;
-            case "hunger" -> 17;
-            case "weakness" -> 18;
-            case "poison" -> 19;
-            case "wither" -> 20;
-            case "health_boost" -> 21;
-            case "absorption" -> 22;
-            case "saturation" -> 23;
-            case "glowing" -> 24;
-            case "levitation" -> 25;
-            case "luck" -> 26;
-            case "bad_luck" -> 27;
-            case "slow_falling" -> 28;
-            case "conduit_power" -> 29;
-            case "dolphins_grace" -> 30;
-            case "bad_omen" -> 31;
-            case "hero_of_the_village" -> 32;
-            case "darkness" -> 33;
-        };
+    public static NamespacedKey calculatePotionEffect(PotionEffectType type){
+        return type.getKey();
     }
     /**
      * Converts a {@link Color} to a decimal color, a color format used for leather armors and fireworks in Minecraft.

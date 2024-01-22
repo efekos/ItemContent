@@ -1,47 +1,49 @@
 package dev.efekos.itemcontent.items.compound;
 
 
+import org.bukkit.NamespacedKey;
+
 /**
  * Represents a custom potion effect inside a potion.
  */
 public class PotionEffectCompound {
-    private final Integer id;
-    private final Integer duration;
-    private final Integer amplifier;
-    private final boolean show_particles;
-    private final boolean ambient;
-    private final boolean show_icon;
+    private final String Id;
+    private final Integer Duration;
+    private final Integer Amplifier;
+    private final boolean ShowParticles;
+    private final boolean Ambient;
+    private final boolean ShowIcon;
 
-    public PotionEffectCompound(Integer id, Integer duration, Integer amplifier, boolean showParticles, boolean ambient, boolean showIcon) {
-        this.id = id;
-        this.duration = duration;
-        this.amplifier = amplifier;
-        show_particles = showParticles;
-        this.ambient = ambient;
-        show_icon = showIcon;
+    public PotionEffectCompound(NamespacedKey id, Integer duration, Integer amplifier, boolean showParticles, boolean ambient, boolean showIcon) {
+        this.Id = id.getNamespace()+":"+id.getKey();
+        this.Duration = duration;
+        this.Amplifier = amplifier;
+        ShowParticles = showParticles;
+        this.Ambient = ambient;
+        ShowIcon = showIcon;
     }
 
-    public Integer getId() {
-        return id;
+    public NamespacedKey getId() {
+        return NamespacedKey.fromString(Id);
     }
 
     public Integer getDuration() {
-        return duration;
+        return Duration;
     }
 
     public Integer getAmplifier() {
-        return amplifier;
+        return Amplifier;
     }
 
     public boolean doesShowParticles() {
-        return show_particles;
+        return ShowParticles;
     }
 
     public boolean isAmbient() {
-        return ambient;
+        return Ambient;
     }
 
     public boolean doesShowIcon() {
-        return show_icon;
+        return ShowIcon;
     }
 }

@@ -1,22 +1,24 @@
 package dev.efekos.itemcontent.items.compound;
 
+import org.bukkit.NamespacedKey;
+
 /**
  * Represents an effect of the "Suspicious Stew" item.
  */
 public class SuspiciousStewEffectCompound {
-    private final Integer effect_id;
-    private final Integer effect_duration;
+    private final String EffectId;
+    private final Integer EffectDuration;
 
-    public SuspiciousStewEffectCompound(Integer effectId, Integer effectDuration) {
-        effect_id = effectId;
-        effect_duration = effectDuration;
+    public SuspiciousStewEffectCompound(NamespacedKey effectId, Integer effectDuration) {
+        EffectId = effectId.getNamespace()+":"+effectId.getKey();
+        EffectDuration = effectDuration;
     }
 
-    public Integer getEffectId() {
-        return effect_id;
+    public NamespacedKey getEffectId() {
+        return NamespacedKey.fromString(EffectId);
     }
 
     public Integer getEffectDuration() {
-        return effect_duration;
+        return EffectDuration;
     }
 }
