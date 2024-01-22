@@ -1,6 +1,7 @@
 package dev.efekos.itemcontent.items.compound;
 
 
+import dev.efekos.itemcontent.items.ItemContent;
 import org.bukkit.NamespacedKey;
 
 /**
@@ -24,7 +25,7 @@ public class PotionEffectCompound {
     }
 
     public NamespacedKey getId() {
-        return NamespacedKey.fromString(Id);
+        return ItemContent.namespacedKeyFromString(Id);
     }
 
     public Integer getDuration() {

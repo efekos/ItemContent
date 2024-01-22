@@ -357,7 +357,6 @@ public class ItemContent extends Content {
         int hideFlagsBit = 0;
         for (ItemFlag flag : flags) {
             switch (flag){
-                case HIDE_DYE: hideFlagsBit += 64;
                 case HIDE_UNBREAKABLE: hideFlagsBit += 4;
                 case HIDE_ENCHANTS: hideFlagsBit += 1;
                 case HIDE_PLACED_ON: hideFlagsBit += 16;
@@ -480,5 +479,9 @@ public class ItemContent extends Content {
             case INSTANT_DAMAGE -> "harming";
             default -> data.getType().getEffectType().getName();
         };
+    }
+    public static NamespacedKey namespacedKeyFromString(String value){
+        String[] s = value.split(":");
+        return new NamespacedKey(s[0],s[1]);
     }
 }
