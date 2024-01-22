@@ -20,7 +20,6 @@ import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -134,7 +133,7 @@ public class ItemContent extends Content {
      * @param slot Value you want to put in "Slot".
      * @return An almost exact copy of the NBT data about the item. Can be used mainly in {@link HoverEvent#HoverEvent(HoverEvent.Action, Content...)}.
      */
-    public static ItemContent from(ItemStack stack,@Nullable Integer slot){
+    public static ItemContent from(ItemStack stack,Integer slot){
         NamespacedKey key = stack.getType().getKey();
         String id = key.getNamespace()+":"+key.getKey();
 
@@ -470,7 +469,7 @@ public class ItemContent extends Content {
      * @return Numeric ID of the effect type given.
      */
     public static NamespacedKey calculatePotionEffect(PotionEffectType type){
-        return type.getKey();
+        return new NamespacedKey("minecraft",type.getName());
     }
     /**
      * Converts a {@link Color} to a decimal color, a color format used for leather armors and fireworks in Minecraft.
@@ -510,7 +509,7 @@ public class ItemContent extends Content {
             case TURTLE_MASTER -> "turtle_master";
             case INSTANT_HEAL -> "healing";
             case INSTANT_DAMAGE -> "harming";
-            default -> data.getType().getEffectType().getKey().getKey();
+            default -> data.getType().getEffectType().getName();
         };
     }
 }
