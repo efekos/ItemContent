@@ -19,6 +19,7 @@ import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import javax.naming.Name;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -480,5 +481,9 @@ public class ItemContent extends Content {
             case INSTANT_DAMAGE -> "harming";
             default -> data.getType().getEffectType().getName();
         };
+    }
+    public static NamespacedKey namespacedKeyFromString(String value){
+        String[] split = value.split(":");
+        return new NamespacedKey(split[0],split[1]);
     }
 }
