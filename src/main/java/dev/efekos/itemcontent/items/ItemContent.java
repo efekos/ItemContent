@@ -12,7 +12,6 @@ import org.bukkit.block.BlockState;
 import org.bukkit.block.ShulkerBox;
 import org.bukkit.block.banner.Pattern;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Axolotl;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.*;
@@ -213,22 +212,6 @@ public class ItemContent extends Content {
                 String worldKey = lodestone.getWorld().getName();
 
                 itemTag = new CompassTag(itemTag,new CompassPositionCompound(lodestone.getBlockX(),lodestone.getBlockY(),lodestone.getBlockZ()), worldKey, compassMeta.isLodestoneTracked());
-            }
-        }
-        if(meta instanceof AxolotlBucketMeta bucketMeta){
-            if(bucketMeta.hasVariant()){
-                itemTag = new AxolotlBucketTag(itemTag,calculateAxolotlVariant(bucketMeta.getVariant()));
-            }
-        }
-        if(meta instanceof BundleMeta bundleMeta){
-            if(bundleMeta.hasItems()){
-                List<ItemContent> contents = new ArrayList<>();
-
-                for (ItemStack item : bundleMeta.getItems()) {
-                    contents.add(from(item));
-                }
-
-                itemTag = new BundleTag(itemTag,contents);
             }
         }
         if(meta instanceof CrossbowMeta crossbowMeta){
@@ -482,20 +465,6 @@ public class ItemContent extends Content {
         int Green = color.getGreen();
 
         return (Red << 16) + (Green << 8) + Blue;
-    }
-    /**
-     * Converts an {@link org.bukkit.entity.Axolotl.Variant} to a number Minecraft will understand.
-     * @param variant Any {@link org.bukkit.entity.Axolotl.Variant}.
-     * @return Numeric ID of the variant given.
-     */
-    public static Integer calculateAxolotlVariant(Axolotl.Variant variant){
-        return switch (variant) {
-            case WILD -> 1;
-            case GOLD -> 2;
-            case CYAN -> 3;
-            case BLUE -> 4;
-            default -> 0;
-        };
     }
     /**
      * Converts a {@link PotionData} to a string Minecraft will understand.
