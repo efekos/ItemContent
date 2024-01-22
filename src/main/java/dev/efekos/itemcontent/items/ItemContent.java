@@ -481,4 +481,8 @@ public class ItemContent extends Content {
             default -> data.getType().getEffectType().getName();
         };
     }
+    public static NamespacedKey namespacedKeyFromString(String value){
+        String[] split = value.split(":");
+        return new NamespacedKey(split[0],split[1]);
+    }
 }
