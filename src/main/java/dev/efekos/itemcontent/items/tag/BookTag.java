@@ -1,6 +1,6 @@
 package dev.efekos.itemcontent.items.tag;
 
-public class BookTag extends ItemTag{
+public class BookTag extends ItemTag {
     public BookTag(ItemTag oldItemTag, String title, String author, Integer generation) {
         super(oldItemTag.Damage, oldItemTag.getHideFlags(), oldItemTag.display, oldItemTag.isUnbreakable(), oldItemTag.getCustomModelData(), oldItemTag.getEnchantments(), oldItemTag.RepairCost);
         this.author = author;

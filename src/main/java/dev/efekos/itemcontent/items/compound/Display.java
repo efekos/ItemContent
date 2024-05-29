@@ -8,12 +8,12 @@ public class Display {
     private final String Name;
     private final String[] Lore;
 
-    public Display(TextCompound[] name, TextCompound[][] lore){
-        this.Name = name!=null ? new Gson().toJson(name) : null;
+    public Display(TextCompound[] name, TextCompound[][] lore) {
+        this.Name = name != null ? new Gson().toJson(name) : null;
         this.Lore = Arrays.stream(lore).map(textCompounds -> new Gson().toJson(textCompounds)).toArray(String[]::new);
     }
 
-    public Display(TextCompound[] name){
+    public Display(TextCompound[] name) {
         this.Name = name != null ? new Gson().toJson(name) : null;
         this.Lore = null;
     }

@@ -15,9 +15,9 @@ public class TrimCompound {
         this.material = material;
     }
 
-    public TrimCompound(TrimPattern pattern, TrimMaterial material){
-        this.pattern = pattern.getKey().getNamespace()+":"+pattern.getKey().getKey();
-        this.material = material.getKey().getNamespace()+":"+material.getKey().getKey();
+    public TrimCompound(TrimPattern pattern, TrimMaterial material) {
+        this.pattern = pattern.getKey().getNamespace() + ":" + pattern.getKey().getKey();
+        this.material = material.getKey().getNamespace() + ":" + material.getKey().getKey();
     }
 
     public String getPattern() {

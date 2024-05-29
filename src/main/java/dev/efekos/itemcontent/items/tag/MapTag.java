@@ -1,6 +1,6 @@
 package dev.efekos.itemcontent.items.tag;
 
-public class MapTag extends ItemTag{
+public class MapTag extends ItemTag {
     private final Integer map;
 
     public MapTag(ItemTag oldItemTag, Integer map) {

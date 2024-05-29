@@ -2,7 +2,7 @@ package dev.efekos.itemcontent.items.tag;
 
 import java.util.List;
 
-public class KnowledgeBookTag extends ItemTag{
+public class KnowledgeBookTag extends ItemTag {
     private final List<String> Recipes;
 
     public KnowledgeBookTag(ItemTag oldItemTag, List<String> recipeIds) {

@@ -1,6 +1,6 @@
 package dev.efekos.itemcontent.items.compound;
 
-public class LeatherArmorDisplay extends Display{
+public class LeatherArmorDisplay extends Display {
     private final Integer color;
 
     public LeatherArmorDisplay(TextCompound[] name, TextCompound[][] lore, Integer color) {

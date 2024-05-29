@@ -2,7 +2,7 @@ package dev.efekos.itemcontent.items.tag;
 
 import dev.efekos.itemcontent.items.compound.PotionEffectCompound;
 
-public class PotionTag extends ItemTag{
+public class PotionTag extends ItemTag {
     private final PotionEffectCompound[] custom_potion_effects;
     private final String Potion;
     private final Integer CustomPotionColor;
@@ -14,7 +14,7 @@ public class PotionTag extends ItemTag{
         this.CustomPotionColor = customPotionColor;
     }
 
-    public PotionTag(ItemTag oldItemTag, String potion){
+    public PotionTag(ItemTag oldItemTag, String potion) {
         super(oldItemTag.Damage, oldItemTag.getHideFlags(), oldItemTag.display, oldItemTag.isUnbreakable(), oldItemTag.getCustomModelData(), oldItemTag.getEnchantments(), oldItemTag.RepairCost);
         this.custom_potion_effects = null;
         this.Potion = potion;

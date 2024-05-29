@@ -1,6 +1,6 @@
 package dev.efekos.itemcontent.items.tag;
 
-public class GoatHornTag extends ItemTag{
+public class GoatHornTag extends ItemTag {
     private final String instrument;
 
     public GoatHornTag(ItemTag oldItemTag, String instrument) {

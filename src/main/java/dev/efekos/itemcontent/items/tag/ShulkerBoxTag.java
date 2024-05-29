@@ -2,7 +2,7 @@ package dev.efekos.itemcontent.items.tag;
 
 import dev.efekos.itemcontent.items.compound.ShulkerBoxCompound;
 
-public class ShulkerBoxTag extends ItemTag{
+public class ShulkerBoxTag extends ItemTag {
     private final ShulkerBoxCompound BlockEntityTag;
 
     public ShulkerBoxTag(ItemTag oldItemTag, ShulkerBoxCompound compound) {

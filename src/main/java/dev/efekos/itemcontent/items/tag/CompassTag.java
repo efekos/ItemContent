@@ -2,7 +2,7 @@ package dev.efekos.itemcontent.items.tag;
 
 import dev.efekos.itemcontent.items.compound.CompassPositionCompound;
 
-public class CompassTag extends ItemTag{
+public class CompassTag extends ItemTag {
     private final CompassPositionCompound LodestonePos;
     private final String LodestoneDimension;
     private final boolean LodestoneTracked;

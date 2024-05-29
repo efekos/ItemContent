@@ -14,8 +14,8 @@ public class EnchantmentCompound {
         this.lvl = lvl;
     }
 
-    public EnchantmentCompound(Enchantment id, Integer lvl){
-        this.id = id.getKey().getNamespace()+":"+id.getKey().getKey();
+    public EnchantmentCompound(Enchantment id, Integer lvl) {
+        this.id = id.getKey().getNamespace() + ":" + id.getKey().getKey();
         this.lvl = lvl;
     }
 

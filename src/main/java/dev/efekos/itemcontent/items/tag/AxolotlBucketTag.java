@@ -1,6 +1,6 @@
 package dev.efekos.itemcontent.items.tag;
 
-public class AxolotlBucketTag extends ItemTag{
+public class AxolotlBucketTag extends ItemTag {
     private final Integer Variant;
 
     public AxolotlBucketTag(ItemTag oldItemTag, Integer variant) {

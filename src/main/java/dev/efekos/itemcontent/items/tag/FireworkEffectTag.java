@@ -2,7 +2,7 @@ package dev.efekos.itemcontent.items.tag;
 
 import dev.efekos.itemcontent.items.compound.ExplosionCompound;
 
-public class FireworkEffectTag extends ItemTag{
+public class FireworkEffectTag extends ItemTag {
     private final ExplosionCompound Explosion;
 
     public FireworkEffectTag(ItemTag oldItemTag, ExplosionCompound compound) {

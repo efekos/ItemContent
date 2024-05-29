@@ -28,7 +28,7 @@ public class TextCompound {
         this.extra = extra;
     }
 
-    public TextCompound(boolean italic, boolean bold, boolean underlined, boolean strikethrough, String color, String text, boolean obfuscated,List<TextCompound> extra) {
+    public TextCompound(boolean italic, boolean bold, boolean underlined, boolean strikethrough, String color, String text, boolean obfuscated, List<TextCompound> extra) {
         this.italic = italic;
         this.bold = bold;
         this.underlined = underlined;
